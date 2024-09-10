@@ -1,8 +1,37 @@
 <script setup>
-import { defineProps } from "vue";
+import { defineProps, computed, ref } from "vue";
 
-defineProps({
+const props = defineProps({
   job: Object,
+});
+
+// My way to turncate the job description:
+// const showFullDesc = ref(false);
+const showFullDescription = ref(false);
+
+// My way to turncate the job description:
+// function showDesc() {
+//   showFullDesc.value = !showFullDesc.value;
+// }
+
+const toggleFullDescription = () => {
+  showFullDescription.value = !showFullDescription.value;
+};
+
+// My way to turncate the job description:
+// const jobDescription = computed(() => {
+//   if (!showFullDesc.value) {
+//     return props.job.description.substring(0, 100) + " ...";
+//   }
+//   return props.job.description;
+// });
+
+const truncatedDescription = computed(() => {
+  let description = props.job.description;
+  if (!showFullDescription.value) {
+    description = description.substring(0, 90) + "...";
+  }
+  return description;
 });
 </script>
 
@@ -15,8 +44,26 @@ defineProps({
       </div>
 
       <div class="mb-5">
-        {{ job.description }}
+        <div>
+          {{ truncatedDescription }}
+        </div>
+        <button
+          @click="toggleFullDescription"
+          class="text-green-500 hover:text-green-600 mb-5"
+        >
+          {{ showFullDescription ? "Less" : "More" }}
+        </button>
       </div>
+      <!-- My way to turncate the job description: -->
+      <!-- <div class="mb-5">
+        {{ jobDescription }}
+        <button
+          class="h-[36px] bg-green-400 hover:bg-green-600 text-white px-2 py-1 rounded-lg text-center text-xs"
+          @click="showDesc"
+        >
+          Show {{ !showFullDesc ? "more" : "less" }}
+        </button>
+      </div> -->
 
       <h3 class="text-green-500 mb-2">{{ job.salary }} / Year</h3>
 
