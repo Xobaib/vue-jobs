@@ -125,6 +125,34 @@
         "contactEmail": "diqoher@mailinator.com",
         "contactPhone": "+1 (955) 592-5297"
       }
+    },
+    {
+      "id": "af94",
+      "type": "Remote",
+      "title": "Kareem Stephens",
+      "description": "Quaerat omnis ut eve",
+      "salary": "$60K - $70K",
+      "location": "Mollit et vel amet ",
+      "company": {
+        "name": "Douglas and Allison Co",
+        "description": "Aliqua Sunt in ipsa",
+        "contactEmail": "qeme@mailinator.com",
+        "contactPhone": "+1 (193) 867-2768"
+      }
+    },
+    {
+      "id": "d4e7",
+      "type": "Internship",
+      "title": "Cathleen Padilla",
+      "description": "Est laboris magnam ",
+      "salary": "$60K - $70K",
+      "location": "Ipsa repudiandae bl",
+      "company": {
+        "name": "Sellers and Nunez Inc",
+        "description": "Sed obcaecati volupt",
+        "contactEmail": "bajyhujy@mailinator.com",
+        "contactPhone": "+1 (291) 712-9535"
+      }
     }
   ]
 }
