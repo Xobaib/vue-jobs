@@ -36,7 +36,6 @@ onMounted(async () => {
     const response = await axios.get("/api/jobs");
     const [jobData] = response.data.filter((job) => job.id === route.params.id);
     state.job = jobData;
-    console.log(state.job.company.name);
   } catch (error) {
     console.log(error.message);
   } finally {
